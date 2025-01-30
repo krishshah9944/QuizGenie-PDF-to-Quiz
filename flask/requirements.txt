@@ -54,7 +54,6 @@ email_validator==2.2.0
 embedchain==0.1.125
 emoji==2.14.0
 eval_type_backport==0.2.0
-executing==0.8.2
 faiss-cpu==1.9.0
 fastapi==0.111.1
 fastapi-cli==0.0.7
