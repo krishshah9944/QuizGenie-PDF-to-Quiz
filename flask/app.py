@@ -15,8 +15,8 @@ GROQ_API_KEY=os.getenv("GROQ_API_KEY")
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = './uploads'
 
-# CORS(app, resources={r"/generate-quiz": {"origins": "https://quiz-genie-pdf-to-quiz.vercel.app"}})
-CORS(app) 
+CORS(app, resources={r"/generate-quiz": {"origins": "https://quiz-genie-pdf-to-quiz.vercel.app"}})
+# CORS(app) 
 
 
 # Ensure the upload folder exists
