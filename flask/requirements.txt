@@ -4,3 +4,4 @@ langchain
 langchain-groq
 flask-restful
 gunicorn
+langchain-community
