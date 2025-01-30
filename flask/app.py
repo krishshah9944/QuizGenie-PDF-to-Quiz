@@ -1,4 +1,4 @@
-GROQ_API_KEY = "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"
+
 from flask import Flask, request, jsonify
 from flask_cors import CORS 
 from langchain_community.document_loaders import PyPDFLoader
@@ -8,6 +8,9 @@ from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
 import os
 import json
+
+
+GROQ_API_KEY=os.getenv("GROQ_API_KEY")
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = './uploads'
@@ -117,67 +120,6 @@ def generate_quiz():
 
         return quiz_json_cleaned,200
         
-
-        
-        
-    # # Manually return the sample quiz in JSON format for debugging purposes
-    #     sample_quiz = [
-    #         {
-    #             "id": 1,
-    #             "question": "What is the primary criterion used to estimate regression coefficients in a simple linear regression model?",
-    #             "options": [
-    #                 "Mean Absolute Deviation",
-    #                 "Least Squares Criterion",
-    #                 "Mean Squared Error",
-    #                 "Coefficient of Determination"
-    #             ],
-    #             "correctAnswer": 1,
-    #             "explanation": "The least squares criterion is used to estimate regression coefficients in a simple linear regression model. It minimizes the sum of the squared differences between the observed and predicted values of the dependent variable."
-    #         },
-    #         {
-    #             "id": 2,
-    #             "question": "What is the purpose of residual plots in simple linear regression analysis?",
-    #             "options": [
-    #                 "To estimate regression coefficients",
-    #                 "To calculate the coefficient of determination",
-    #                 "To indicate if assumptions of the model have been violated",
-    #                 "To formulate tests of fit"
-    #             ],
-    #             "correctAnswer": 2,
-    #             "explanation": "Residual plots are used to indicate if the assumptions of the simple linear regression model have been violated. They help to identify patterns or non-randomness in the residuals, which can suggest that the model is not appropriate for the data."
-    #         },
-    #         {
-    #             "id": 3,
-    #             "question": "What is the primary use of Analysis of Variance (ANOVA) in regression analysis?",
-    #             "options": [
-    #                 "To estimate regression coefficients",
-    #                 "To calculate the coefficient of determination",
-    #                 "To formulate tests of fit and of regression coefficients",
-    #                 "To minimize the sum of the squared differences between the observed and predicted values"
-    #             ],
-    #             "correctAnswer": 2,
-    #             "explanation": "Analysis of Variance (ANOVA) is used to formulate tests of fit and of regression coefficients in regression analysis. It helps to determine whether the regression model is significant and whether the independent variable(s) have a significant effect on the dependent variable."
-    #         },
-    #         {
-    #             "id": 4,
-    #             "question": "What is the standard error of estimate used for in simple linear regression?",
-    #             "options": [
-    #                 "To calculate the coefficient of determination",
-    #                 "To estimate regression coefficients",
-    #                 "To formulate tests of fit",
-    #                 "To measure the variability of the dependent variable around the regression line"
-    #             ],
-    #             "correctAnswer": 3,
-    #             "explanation": "The standard error of estimate is used to measure the variability of the dependent variable around the regression line in simple linear regression. It provides a measure of the uncertainty of predictions made using the regression model."
-    #         }
-    #     ]
-        
-    #     return jsonify(sample_quiz), 200
-
-
-    
-    
-
     except Exception as e:
         return jsonify({"error": f"Error processing file: {str(e)}"}), 500
 
