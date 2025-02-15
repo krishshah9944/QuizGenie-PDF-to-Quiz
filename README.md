@@ -11,6 +11,14 @@ QuizGenie is an AI-powered application that transforms PDFs into multiple-choice
 - **Customizable Topics**: Generates quizzes based on selected topics.
 - **Interactive UI**: Built with React (Vite) for a seamless user experience.
 
+## 🎥 Demo
+
+Check out the live demo: [QuizGenie App](https://quiz-genie-pdf-to-quiz.vercel.app/)
+
+### ⚠️ Note
+- **Processing might take up to 1 minute** due to limited computational power.
+- **Large PDFs are not supported** in the demo due to resource constraints.
+
 ## 🛠️ Installation
 
 ### 1️⃣ Clone the Repository
@@ -80,13 +88,6 @@ npm run dev
 2. The AI processes the document and generates quiz questions.
 3. Review and interact with the generated quiz in the UI.
 
-## 🎥 Demo
-
-Check out the live demo: [QuizGenie App](https://quiz-genie-pdf-to-quiz.vercel.app/)
-
-### ⚠️ Note
-- **Processing might take up to 1 minute** due to limited computational power.
-- **Large PDFs are not supported** in the demo due to resource constraints.
 
 ## 🤝 Contributing
 
